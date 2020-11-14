@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\FriendbookController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,6 @@ Route::get('/session/get',[SessionController::class, "getSessionData"]);
 Route::get('/session/set',[SessionController::class, "storeSessionData"]);
 
 Route::get('/session/remove',[SessionController::class, "deleteSessionData"]);
+
+Route::resource('friends', FriendbookController::class);
+
