@@ -10,6 +10,6 @@ class Friend extends Model
     use HasFactory;
   
     protected $fillable = [
-        'name', 'detail'
+        'name', 'detail', 'address', 'birthday', 'zodiacsign', 'hobbies'
     ];
 }

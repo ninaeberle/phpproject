@@ -18,6 +18,13 @@ class CreateFriendsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->text('detail');
+            $table->text('address');
+            $table->date('birthday');
+            $table->string('zodiacsign');
+            $table->string('hobbies');
+
+
+
 
         });
     }

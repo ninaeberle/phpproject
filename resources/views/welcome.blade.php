@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <div class="relative flex items-top justify-center ">
-            <h1>Friendbook</h1>
+            <h1>FriendBOOK</h1>
         </div>
         <div class="relative flex items-top justify-center ">
-            <h2>Welcome to the first digital friendbook!</h2>
+            <h2 class="mx-auto" style="width: 250px; font-size:25px; margin-left:605px">Willkommen zu dem ersten digitalen Freundebuch!</h2>
+        </div>
+        <div class="relative flex items-top justify-center">
+            <h4 class="mx-auto" style="color:white; width: 350px; margin-bottom:-600px; margin-left:580px" >Hier kannst du neue Freunde hinzufügen, sie pflegen oder auch wieder löschen. FriendBOOK bietet dir außerdem die Möglichkeit ihre Lieblingssongs einzusehen.</h4>
         </div>
 
         <!-- Fonts -->
@@ -19,28 +22,35 @@
         </style>
 
         <style>
-            body {
+            .bodyblack {
                 font-family: 'Futura';
-                background: pink;
+                background: black;
             }
         </style>
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen  sm:items-center sm:pt-0">
-            @if (Route::has('login'))
+    <body class="antialiased" >
+        <div class="bodyblack">
 
-                <div class="hidden fixed top-40 right-40 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+            <div class="relative flex items-top justify-center min-h-screen  sm:items-center sm:pt-0" >
+                @if (Route::has('login'))
+
+                    <div class="hidden fixed top-40 right-40 px-6 py-4 sm:block">
+                        @auth
+                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline" style="color:white">Dashboard</a>
+                        @else
+                            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline" style="color:white">Login</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline" style="color:white">Registrieren</a>
+                            @endif
                         @endif
-                    @endif
-                </div>
-            @endif
+                    </div>
+                @endif
+            </div>
         </div>
+
+
+
     </body>
 </html>
