@@ -37,7 +37,7 @@
 
                     <div class="hidden fixed top-40 right-40 px-6 py-4 sm:block">
                         @auth
-                            <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline" style="color:white">Dashboard</a>
+                            <a href="{{ url('/friends') }}" class="text-sm text-gray-700 underline" style="color:white">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline" style="color:white">Login</a>
 
