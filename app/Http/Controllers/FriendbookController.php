@@ -41,6 +41,11 @@ class FriendbookController extends Controller
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
+            'address' => 'required',
+            'birthday' => 'required',
+            'zodiacsign' => 'required',
+            'hobbies' => 'required',
+
         ]);
     
         Friend::create($request->all());
