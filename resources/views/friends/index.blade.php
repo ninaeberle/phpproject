@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
+    <!-- CSRF token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
+    <!-- scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
+    <!-- fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-
+<!--Login, Logout and Registration-->
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
@@ -34,14 +34,14 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
+                <!-- left side of the navbar -->
                 <ul class="navbar-nav mr-auto">
 
                 </ul>
 
-                <!-- Right Side Of Navbar -->
+                <!-- right side of the navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
+                    <!-- authentication links -->
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -107,7 +107,7 @@
     </div>
 
     
- 
+    <!--The black header above the table in the browser-->
         <style>
             .headerblack {
                 font-family: 'Futura';
@@ -135,6 +135,30 @@
         </div>
     @endif
 
+
+    <!-- search bar to find specific friends in the application-->
+    <div class="row " style="margin-top:20px">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8" style="margin-bottom:40px">
+
+            <form action="/friends" method="get">
+                <div class="input-group">
+                    <input type="search"  style="width:400px" name="search" class="form-control" placeholder="Freunde suchen">
+                    <div class="col-md-2">
+                        <span class="input-group-append">
+                            <button type="submit" style="margin-top:10px" class="btn btn-dark">Suchen</button>
+                        </span>
+                    </div>
+                    <button type="submit" style="margin-top:10px" href="{{ url('/friends') }}" class="btn btn-dark" >Alle Anzeigen</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+    
+
+    
+    <!--The table which is seen in the browser -->
     <table class="table">
         <thead>
             <tr>
@@ -152,8 +176,7 @@
             @foreach ($friends as $friend)
         <tbody>
             <tr>
-
-                <td>{{ ++$i }}</td>
+                <td>{{ $i ?? '' }}</td>
                 <td>{{ $friend->name }}</td>
                 <td>{{ $friend->detail }}</td>
                 <td>{{ $friend->address }}</td>

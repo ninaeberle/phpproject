@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+//this table holds certain data types and certain attributes like name, detail, address ...
 class CreateFriendsTable extends Migration
 {
     /**
@@ -22,9 +23,6 @@ class CreateFriendsTable extends Migration
             $table->date('birthday');
             $table->string('zodiacsign');
             $table->string('hobbies');
-
-
-
 
         });
     }

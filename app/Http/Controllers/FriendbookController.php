@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Friend;
 use Illuminate\Http\Request;
 
+//The controller which contains the functions for this application
+
+
 class FriendbookController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * display a listing of the friends
+     * multiple pages -> friends are seperated in multiple pages when more then 5 friends have been created
      *
      * @return \Illuminate\Http\Response
      */
@@ -21,7 +25,7 @@ class FriendbookController extends Controller
     }
      
     /**
-     * Show the form for creating a new resource.
+     * show the form for creating a new friend
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,7 +35,7 @@ class FriendbookController extends Controller
     }
     
     /**
-     * Store a newly created resource in storage.
+     * store function to save a new created person in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -55,7 +59,7 @@ class FriendbookController extends Controller
     }
      
     /**
-     * Display the specified resource.
+     * display function to display the specified resource
      *
      * @param  \App\Friend  $friend
      * @return \Illuminate\Http\Response
@@ -66,7 +70,7 @@ class FriendbookController extends Controller
     } 
      
     /**
-     * Show the form for editing the specified resource.
+     * show function to show the form for editing the specified resource
      *
      * @param  \App\Friend  $friend
      * @return \Illuminate\Http\Response
@@ -77,7 +81,7 @@ class FriendbookController extends Controller
     }
     
     /**
-     * Update the specified resource in storage.
+     * update function to update the specified resource in storage after beeing edited
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Friend  $product
@@ -88,6 +92,11 @@ class FriendbookController extends Controller
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
+
+
+
+
+
         ]);
     
         $friend->update($request->all());
@@ -97,7 +106,7 @@ class FriendbookController extends Controller
     }
     
     /**
-     * Remove the specified resource from storage.
+     * remove function to delete the specified resource from the storage
      *
      * @param  \App\Friend  $friend
      * @return \Illuminate\Http\Response
@@ -109,4 +118,13 @@ class FriendbookController extends Controller
         return redirect()->route('friends.index')
                         ->with('success','Friend deleted successfully');
     }
+
+
+    //search function to search specific friend in your table
+    public function search(Request $request) {
+        $friends = $request->get('search');
+        $friends = Friend::where('name', 'like', '%' .$friends. '%')->paginate(5);
+        return view('friends.index', ['friends' => $friends]);
+    }
+
 }

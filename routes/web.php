@@ -20,9 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route for login logout and registration
 Auth::routes();
 
+//Rout for the HomeController
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Rout for the FrienbookController, so 
 Route::resource('friends', FriendbookController::class);
+
+//Route for the FrienbookController, so
+Route::get('/friends', [App\Http\Controllers\FriendbookController::class, 'search']);
+
 
