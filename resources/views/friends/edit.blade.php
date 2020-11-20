@@ -74,13 +74,31 @@
                     <input type="string" name="hobbies" value="{{ $friend->hobbies }}" class="form-control" placeholder="Hobbies">
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Social Media</strong>
+                    <input type="text" name="socialmedia" value="{{ $friend->socialmedia }}" class="form-control" placeholder="Social Media">
+                </div>
+            </div>
 
 
             
+
+
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-warning" style="margin-top:30px">Fertig!</button>
             </div>
         </div>
    
     </form>
+
+    
+
+
+    
 @endsection
+
+
+
+

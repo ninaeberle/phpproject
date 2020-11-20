@@ -119,7 +119,7 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="mx-auto" style="width: 200px;">
-                        <h2 style="margin-top:50px; margin-left:10px; margin-bottom:80px; color:white" >Dein digitales <strong>FriendBOOK</strong> </h2>                
+                        <h2 style="margin-top:50px; margin-left:10px; margin-bottom:80px; color:white" >Mein digitales <strong>FriendBOOK</strong> </h2>                
                         <h4 style="color:white; margin-left:10px">Dashboard</h4>
                     </div>
                     <div class="pull-right">
@@ -142,15 +142,15 @@
         </div>
         <div class="col-md-8" style="margin-bottom:40px">
 
-            <form action="/friends" method="get">
+            <form action="friends-search"  method="get">
                 <div class="input-group">
                     <input type="search"  style="width:400px" name="search" class="form-control" placeholder="Freunde suchen">
                     <div class="col-md-2">
                         <span class="input-group-append">
-                            <button type="submit" style="margin-top:10px" class="btn btn-dark">Suchen</button>
+                            <button style="margin-top:10px" href="{{ url('/friends-search') }}" class="btn btn-dark">Suchen</button>
                         </span>
                     </div>
-                    <button type="submit" style="margin-top:10px" href="{{ url('/friends') }}" class="btn btn-dark" >Alle Anzeigen</button>
+                    <button type="submit" style="margin-top:10px" href="{{ url('/friends') }}" class="btn btn-dark" >Alle anzeigen</button>
                 </div> 
             </form>
         </div>
@@ -169,6 +169,8 @@
                 <th scope="col">Geburtstag</th>
                 <th scope="col">Sternzeichen</th>
                 <th scope="col">Hobbies</th>
+                <th scope="col">Social Media</th>
+
 
                 <th width="350px">Aktionen</th>
             </tr>
@@ -183,7 +185,7 @@
                 <td>{{ $friend->birthday }}</td>
                 <td>{{ $friend->zodiacsign }}</td>
                 <td>{{ $friend->hobbies }}</td>
-
+                <td>{{ $friend->socialmedia }}</td>
 
 
                 <td>
@@ -208,4 +210,5 @@
     {!! $friends->links() !!}
 
 </div>
+
 

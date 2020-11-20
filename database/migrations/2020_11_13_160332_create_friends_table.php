@@ -23,6 +23,8 @@ class CreateFriendsTable extends Migration
             $table->date('birthday');
             $table->string('zodiacsign');
             $table->string('hobbies');
+            $table->text('socialmedia');
+
 
         });
     }

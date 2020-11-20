@@ -10,7 +10,7 @@
             <h2 class="mx-auto" style="width: 250px; font-size:25px; margin-left:605px">Willkommen zu dem ersten digitalen Freundebuch!</h2>
         </div>
         <div class="relative flex items-top justify-center">
-            <h4 class="mx-auto" style="color:white; width: 350px; margin-bottom:-600px; margin-left:580px" >Hier kannst du neue Freunde hinzufügen, sie pflegen oder auch wieder löschen. FriendBOOK bietet dir außerdem die Möglichkeit ihre Lieblingssongs einzusehen.</h4>
+            <h4 class="mx-auto" style="color:white; width: 350px; margin-bottom:-600px; margin-left:580px" >Hier kannst du neue Freunde hinzufügen, sie pflegen oder auch wieder löschen. Du kannst hier verschiedene Informationen über deine Freunde erfahren und sie speichern. FriendBOOK bietet dir außerdem die Möglichkeit nach deinen Freunden zu suchen.</h4>
         </div>
 
         <!-- Fonts -->
@@ -29,6 +29,7 @@
         </style>
     </head>
     <body class="antialiased" >
+        
         <div class="bodyblack">
 
 

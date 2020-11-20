@@ -49,6 +49,8 @@ class FriendbookController extends Controller
             'birthday' => 'required',
             'zodiacsign' => 'required',
             'hobbies' => 'required',
+            'socialmedia' => 'required',
+
 
         ]);
     
@@ -126,5 +128,5 @@ class FriendbookController extends Controller
         $friends = Friend::where('name', 'like', '%' .$friends. '%')->paginate(5);
         return view('friends.index', ['friends' => $friends]);
     }
-
+    
 }

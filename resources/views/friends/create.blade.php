@@ -74,6 +74,12 @@
                 <input type="string" name="hobbies" class="form-control" placeholder="Hobbies">
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Social Media:</strong>
+                <input type="text" name="socialmedia" class="form-control" placeholder="Social Media">
+            </div>
+        </div>
 
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

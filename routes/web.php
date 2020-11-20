@@ -23,13 +23,15 @@ Route::get('/', function () {
 //Route for login logout and registration
 Auth::routes();
 
-//Rout for the HomeController
+//Route for the HomeController
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Rout for the FrienbookController, so 
+//Route for the FrienbookController, so 
 Route::resource('friends', FriendbookController::class);
 
 //Route for the FrienbookController, so
-Route::get('/friends', [App\Http\Controllers\FriendbookController::class, 'search']);
+//Route::get('/friends', [App\Http\Controllers\FriendbookController::class, 'search']);
+//Route::resource('friends.search', FriendbookController::class);
+Route::get('/friends-search', [FriendbookController::class, 'search'])->name('friends-search');
 
 
