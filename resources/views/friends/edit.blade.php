@@ -2,6 +2,8 @@
    
 @section('content')
 
+<!-- The blade for the "bearbeiten" function -->
+
     <style>
         .editfriendsblack {
             font-family: 'Futura';
@@ -81,13 +83,8 @@
                 </div>
             </div>
 
-
-            
-
-
-
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-warning" style="margin-top:30px">Fertig!</button>
+              <button type="submit" class="btn btn-warning" style="margin:20px">Fertig!</button>
             </div>
         </div>
    

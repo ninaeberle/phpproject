@@ -23,15 +23,13 @@ Route::get('/', function () {
 //Route for login logout and registration
 Auth::routes();
 
-//Route for the HomeController
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route for the FrienbookController, so can get every function from the index blade
+//middleware('auth') is responsible for the login, so you can't have access to the route without beeing logged in
+Route::resource('friends', FriendbookController::class)->middleware('auth');
 
-//Route for the FrienbookController, so 
-Route::resource('friends', FriendbookController::class);
+//Route for the FrienbookController, so it can get the search function
+//middleware('auth') is responsible for the login, so you can't have access to the route without beeing logged in
+Route::get('/friends-search', [FriendbookController::class, 'search'])->name('friends-search')->middleware('auth');
 
-//Route for the FrienbookController, so
-//Route::get('/friends', [App\Http\Controllers\FriendbookController::class, 'search']);
-//Route::resource('friends.search', FriendbookController::class);
-Route::get('/friends-search', [FriendbookController::class, 'search'])->name('friends-search');
 
 

@@ -2,6 +2,8 @@
   
 @section('content')
 
+<!-- The blade for the "Freund erstellen" function -->
+
 <style>
     .createfriendsblack {
         font-family: 'Futura';
@@ -83,7 +85,7 @@
 
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-warning" style="margin-top:20px">Fertig!</button>
+                <button type="submit" class="btn btn-warning" style="margin:20px">Fertig!</button>
         </div>
     </div>
    

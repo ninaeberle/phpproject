@@ -2,6 +2,8 @@
   
 @section('content')
 
+<!-- The blade for the "Zeigen" function -->
+
     <style>
         .showfriendsblack {
             font-family: 'Futura';

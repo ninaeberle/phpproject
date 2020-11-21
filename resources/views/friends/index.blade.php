@@ -2,6 +2,8 @@
 
 @section('content')
 
+<!-- The blade for the dashboard -->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,7 +89,6 @@
     <div class="laravelheader">
         <div class="row justify-content-center">
             <div class="col-md-8">
-
  <!-- 
                 <div class="card">
                     <div class="card-body">
@@ -101,7 +102,6 @@
                 </div>
                 -->
                 
-
             </div>
         </div>
     </div>
@@ -210,5 +210,9 @@
     {!! $friends->links() !!}
 
 </div>
+
+
+
+
 
 
